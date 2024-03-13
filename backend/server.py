@@ -239,7 +239,7 @@ class QARequestHandler(http.server.BaseHTTPRequestHandler):
                 openai.api_key = api_key
                 prompt = f"Given the following text:\n\n{context}\n\nPlease generate at least 3 {ques_type} type questions related to the provided information. For each question, include options and the correct answer in the format Question:, Option:, Answer:. Ensure the questions are clear, concise, and test the understanding of key concepts in the text."
                 response = openai.Completion.create(
-                    model="text-davinci-002",
+                    model="gpt-3.5-turbo",
                     prompt=prompt,
                     temperature=0.7,
                     max_tokens=1024,
